@@ -1,62 +1,90 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+## README
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# ＜ アプリケーション名 ＞
 
-## About Laravel
+### process-control_app
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+# ＜ アプリケーション概要 ＞
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+※実装中の為、内容が変わる事が御座います。
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+生産の工程表の作成が行えます。
+生産アイテム名・Lot_No・計画期間を入力する事で工程を登録し、現在の日付にて進捗の管理が行えます。
+また、日報にてその日の生産結果を入力する事で今後の生産工程作成に役立てます。
+過去の生産履歴の検索が行えアイテムごとの過去の進捗やデータを見る事が出来ます。
 
-## Learning Laravel
+# ＜ 作成背景 ＞
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+職場で生産の工程をボードに記入し管理を行っており工程を組む方の経験で組まれている為時間が掛っていた点、過去の履歴が紙媒体で保管されており遡って確認する際に困難であった点から、Webアプリケーションとして工程の作成、検索、日報の入力などが行えると、効率的に工程を組む事が出来たり生産性の向上に繋がるのではないかという思いより作成に至りました。
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+# ＜ デプロイ先・テストアカウント ＞
 
-## Laravel Sponsors
+<デプロイ先><br>
+Heroku : <br>
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+# ＜ 利用方法 ＞
 
-### Premium Partners
+※実装中の為、以下の画面はイメージです!!
+※変更となる可能性が御座います。
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/)**
-- **[OP.GG](https://op.gg)**
+- Topページ
+Topページにて「工程登録」「進捗確認」「日報入力」「データ検索」「設定」を選択し各専用のページへ遷移します。
+<img width="824" alt="スクリーンショット 2021-01-10 1 20 58" src="https://user-images.githubusercontent.com/69197315/104102834-2ca48c80-52e2-11eb-86a0-f1c7768b9d8b.png">
 
-## Contributing
+- 工程登録
+アイテムやLot_Noごとに工程を登録出来ます。
+<img width="821" alt="スクリーンショット 2021-01-10 1 43 46" src="https://user-images.githubusercontent.com/69197315/104103446-7d69b480-52e5-11eb-9a5c-99423dfca792.png">
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+- 進捗確認
+現在の日付に対しての進捗を一覧表で確認出来ます。
+<img width="819" alt="スクリーンショット 2021-01-09 13 31 08" src="https://user-images.githubusercontent.com/69197315/104103461-93777500-52e5-11eb-9f81-a2a281f85ca2.png">
 
-## Code of Conduct
+- 日報入力
+本日の日報を入力するページで、「アイテム名」「Lot_No」「生産数」「着手時間」を入力します。
+<img width="819" alt="スクリーンショット 2021-01-10 1 34 04" src="https://user-images.githubusercontent.com/69197315/104103175-ff58de00-52e3-11eb-9e4d-f9fc3b94cc82.png">
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+- データ検索
+過去の生産状況を検索出来ます。<br>
+<検索フォーム>
+<img width="830" alt="スクリーンショット 2021-01-09 15 00 17" src="https://user-images.githubusercontent.com/69197315/104096061-9f5f3900-52dd-11eb-8427-64d3969ee42e.png">
+＜検索結果画面＞
+<img width="822" alt="スクリーンショット 2021-01-09 14 43 39" src="https://user-images.githubusercontent.com/69197315/104103398-3da2cd00-52e5-11eb-9eec-02c840307439.png">
 
-## Security Vulnerabilities
+- 設定
+進捗確認表にて表示する範囲色の変更が出来ます。
+<img width="822" alt="スクリーンショット 2021-01-09 20 14 25" src="https://user-images.githubusercontent.com/69197315/104096156-1f859e80-52de-11eb-865b-1724b36e6ffd.png">
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-## License
+# ＜ 工夫したポイント ＞
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+# ＜ 使用技術(開発環境) ＞
+
+- 言語 : PHP
+- フレームワーク : Laravel(8.21.0)
+- DB : MySQL
+- サーバー : 
+
+# ＜ DB設計 ＞
+
+※実装中の為、変更となる可能性が御座います。
+
+# ＜ 画面遷移図 ＞
+
+※実装中の為、変更となる可能性が御座います。
+
+
+# ＜ 今後の課題・追加したい機能 ＞
+
+
+# ＜ ローカルでの動作方法 ＞
+
+### バージョン情報
+- PHP 7.3.11
+- Laravel 8.21.0
+### 動作方法
+
+
+
+
