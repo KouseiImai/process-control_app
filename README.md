@@ -27,9 +27,9 @@ Heroku : ※実装中の為、後程記入します。<br>
 ※実装中の為、以下の画面はイメージです!!
 ※変更となる可能性があります。
 
-- Topページ
-Topページにて「工程登録」「進捗確認」「日報入力」「データ検索」「設定」を選択し各専用のページへ遷移します。
-<img width="824" alt="スクリーンショット 2021-01-10 1 20 58" src="https://user-images.githubusercontent.com/69197315/104102834-2ca48c80-52e2-11eb-86a0-f1c7768b9d8b.png">
+- Homeページ
+Homeページにて「工程登録」「進捗確認」「日報入力」「データ検索」「設定」を選択し各専用のページへ遷移します。
+<img width="821" alt="スクリーンショット 2021-01-10 19 10 13" src="https://user-images.githubusercontent.com/69197315/104120095-80ad8080-5377-11eb-9647-be976281e6c4.png">
 
 - 工程登録
 アイテムやLot_Noごとに工程を登録出来ます。
@@ -69,7 +69,7 @@ Topページにて「工程登録」「進捗確認」「日報入力」「デ�
 # ＜ DB設計 ＞
 
 ※実装中の為、変更となる可能性があります。
-<img width="1175" alt="スクリーンショット 2021-01-10 16 00 10" src="https://user-images.githubusercontent.com/69197315/104116566-fe17c780-535c-11eb-96d3-2e1a1481cbe4.png">
+<img width="1265" alt="スクリーンショット 2021-01-10 18 49 15" src="https://user-images.githubusercontent.com/69197315/104119704-9a999400-5374-11eb-86fd-ed66c4f0692c.png">
 
 # ＜ 画面遷移図 ＞
 
