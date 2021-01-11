@@ -69,7 +69,7 @@ Homeページにて「工程登録」「進捗確認」「日報入力」「デ�
 # ＜ DB設計 ＞
 
 ※実装中の為、変更となる可能性があります。
-<img width="1265" alt="スクリーンショット 2021-01-10 18 49 15" src="https://user-images.githubusercontent.com/69197315/104119704-9a999400-5374-11eb-86fd-ed66c4f0692c.png">
+<img width="1278" alt="スクリーンショット 2021-01-11 13 21 51" src="https://user-images.githubusercontent.com/69197315/104147019-11d03600-5410-11eb-81ab-43b1951138f5.png">
 
 # ＜ 画面遷移図 ＞
 
