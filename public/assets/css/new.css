@@ -40,9 +40,9 @@
 .required_item {
   display: inline;
   margin-left: 10px;
-  border: solid 1px #fa8072;
+  border: solid 1px #dc143c;
   border-radius: 5px;
-  background-color: #fa8072;
+  background-color: #dc143c;
   color: white;
   padding: 3px;
   font-size: 15px;
