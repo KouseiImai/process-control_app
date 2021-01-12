@@ -23,3 +23,5 @@ Route::get('/', function () {
 });
 
 Route::get('/process/new', [Process_registrationController::class, 'new']);
+
+Route::post('/process/create', [Process_registrationController::class, 'create']);

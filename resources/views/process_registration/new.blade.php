@@ -17,7 +17,7 @@
               echo date('Y-m-d');
             ?>
           >
-          <select class="select_form">
+          <select class="select_form" name="start_time">
             @foreach($times as $time)
               <option value="{{ $time }}">{{ $time }}</option>
             @endforeach
@@ -28,7 +28,7 @@
               echo date('Y-m-d');
             ?>
           >
-          <select class="select_form">
+          <select class="select_form" name="end_time">
             @foreach($times as $time)
               <option value="{{ $time }}">{{ $time }}</option>
             @endforeach

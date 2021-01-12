@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProcessDataTable extends Migration
+class CreateLotNumbersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,9 @@ class CreateProcessDataTable extends Migration
      */
     public function up()
     {
-        Schema::create('process_data', function (Blueprint $table) {
+        Schema::create('lot_numbers', function (Blueprint $table) {
             $table->increments('id');
-            $table->date('start_date');
-            $table->date('start_time');
-            $table->date('end_date');
-            $table->date('end_time');
+            $table->string('lot_number');
             $table->timestamps();
         });
     }
@@ -30,6 +27,6 @@ class CreateProcessDataTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('process_data');
+        Schema::dropIfExists('lot_numbers');
     }
 }
