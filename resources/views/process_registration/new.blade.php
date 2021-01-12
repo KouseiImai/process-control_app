@@ -16,11 +16,11 @@
       <form method="POST" action="/process/create">
         @csrf
         <div class="form_contents">
-          <label class="label_name">アイテム名</label>
+          <label class="label_name">アイテム名 <div class="required_item">必須項目</div></label>
           <input type="text" name="item_name" class="input_form">
-          <label class="label_name">Lot_No</label>
+          <label class="label_name">Lot_No <div class="required_item">必須項目</div></label>
           <input type="text" name="lot_number" class="input_form">
-          <label class="label_name">着手予定日時</label>
+          <label class="label_name">着手予定日時 <div class="required_item">必須項目</div></label>
           <input type="date" name="start_date" value="YYYY-MM-DD" min=
             <?php
               echo date('Y-m-d');
@@ -31,7 +31,7 @@
               <option value="{{ $time }}">{{ $time }}</option>
             @endforeach
           </select>
-          <label class="label_name">完了予定日時</label>
+          <label class="label_name">完了予定日時 <div class="required_item">必須項目</div></label>
           <input type="date" name="end_date" value="YYYY-MM-DD" min=
             <?php
               echo date('Y-m-d');
