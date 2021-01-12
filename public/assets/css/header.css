@@ -1,0 +1,31 @@
+.header_contents {
+  width: 100%;
+  height: 120px;
+  background-color: #F0F8FF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: serif;
+  position: relative;
+}
+
+.header_text {
+  font-size: 40px;
+}
+
+.home_text {
+  color: black;
+  border: double 4px black;
+  padding: 2px 15px;
+  font-size: 20px;
+  text-decoration: none;
+  position: absolute;
+  right: 30px;
+  bottom: 20px;
+}
+
+.home_text:hover {
+  color: white;
+  border: double 4px white;
+  background-color: black;
+}

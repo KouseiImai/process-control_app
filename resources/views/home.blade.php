@@ -11,7 +11,7 @@
     <div class="main">
       <h1 class="title_text">〜 Home 〜</h1>
       <div class="index_contents">
-        <a href="#" class="index_text">工程登録</a>
+        <a href="process/new" class="index_text">工程登録</a>
         <a href="#" class="index_text">進捗確認表</a>
         <a href="#" class="index_text">日報入力</a>
         <a href="#" class="index_text">データ検索</a>
