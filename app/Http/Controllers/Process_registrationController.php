@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\Process_registrationRequest;
 use App\Models\Lot_number;
 use App\Models\Process_data;
 use App\Models\Production_item;
@@ -15,10 +16,10 @@ class Process_registrationController extends Controller
         return view('process_registration.new')->with(['times' => $times]);
     }
 
-    public function create(Request $request)
+    public function create(Process_registrationRequest $request)
     {
         $params = $request->all();
-        
+
         $lot_number = new Lot_number;
         $lot_number->lot_number = $request->lot_number;
         $lot_number->save();

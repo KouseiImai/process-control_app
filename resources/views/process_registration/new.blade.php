@@ -4,6 +4,15 @@
   <div class="new_main">
     <div class="input_contents">
       <h1 class="input_index">登録項目<h1>
+      @if ( count($errors) > 0 )
+        <div class="error_message">
+          <ul>
+            @foreach ($errors->all() as $error)
+              <li>{{ $error }}</li>
+            @endforeach
+          </ul>
+        </div>
+      @endif
       <form method="POST" action="/process/create">
         @csrf
         <div class="form_contents">
