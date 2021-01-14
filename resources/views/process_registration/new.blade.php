@@ -1,5 +1,7 @@
 @extends('layouts.base')
 
+@section('header_title', '工程登録')
+
 @section('content')
   <div class="new_main">
     <div class="input_contents">

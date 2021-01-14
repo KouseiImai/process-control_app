@@ -11,6 +11,6 @@ class Progress_confirmationController extends Controller
 {
     public function index(Request $request)
     {
-        //
+        return view('progress_confirmation.index');
     }
 }
