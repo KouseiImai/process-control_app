@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Lot_number extends Model
 {
     use HasFactory;
+
+    public function process_datas()
+    {
+        return $this->belongsToMany('App\Models\Process_data');
+    }
 }

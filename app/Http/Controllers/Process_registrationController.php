@@ -7,6 +7,8 @@ use App\Http\Requests\Process_registrationRequest;
 use App\Models\Lot_number;
 use App\Models\Process_data;
 use App\Models\Production_item;
+use App\Models\Lotnumber_process_relation;
+use App\Models\Item_process_relation;
 
 class Process_registrationController extends Controller
 {
@@ -34,6 +36,16 @@ class Process_registrationController extends Controller
         $process_data->end_date = $request->end_date;
         $process_data->end_time = $request->end_time;
         $process_data->save();
+
+        $lot_process_relation = new Lotnumber_process_relation;
+        $lot_process_relation->lot_number_id = $lot_number->id;
+        $lot_process_relation->process_data_id = $process_data->id;
+        $lot_process_relation->save();
+
+        $item_process_relation = new Item_process_relation;
+        $item_process_relation->production_item_id = $production_item->id;
+        $item_process_relation->process_data_id = $process_data->id;
+        $item_process_relation->save();
 
         unset($params['_token']);
         return redirect('/');
