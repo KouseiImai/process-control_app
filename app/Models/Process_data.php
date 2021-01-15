@@ -11,11 +11,25 @@ class Process_data extends Model
 
     public function lot_numbers()
     {
-        return $this->belongsToMany('App\Models\Lot_number');
+        return $this->hasManyThrough(
+            'App\Models\Lot_number',
+            'App\Models\Lotnumber_process_relation',
+            'process_data_id',
+            'id',
+            'id',
+            'lot_number_id'
+        );
     }
 
     public function production_items()
     {
-        return $this->belongsToMany('App\Models\Production_item');
+        return $this->hasManyThrough(
+            'App\Models\Production_item',
+            'App\Models\Item_process_relation',
+            'process_data_id',
+            'id',
+            'id',
+            'production_item_id'
+        );
     }
 }
