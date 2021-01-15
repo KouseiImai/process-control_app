@@ -20,8 +20,6 @@ class Process_registrationController extends Controller
 
     public function create(Process_registrationRequest $request)
     {
-        $params = $request->all();
-
         $lot_number = new Lot_number;
         $lot_number->lot_number = $request->lot_number;
         $lot_number->save();
@@ -35,6 +33,7 @@ class Process_registrationController extends Controller
         $process_data->start_time = $request->start_time;
         $process_data->end_date = $request->end_date;
         $process_data->end_time = $request->end_time;
+        $process_data->process_remarks = $request->process_remarks;
         $process_data->save();
 
         $lot_process_relation = new Lotnumber_process_relation;
@@ -47,7 +46,7 @@ class Process_registrationController extends Controller
         $item_process_relation->process_data_id = $process_data->id;
         $item_process_relation->save();
 
-        unset($params['_token']);
+        unset($request['_token']);
         return redirect('/');
     }
 }

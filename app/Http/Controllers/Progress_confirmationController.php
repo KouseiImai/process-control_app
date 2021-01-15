@@ -13,6 +13,9 @@ class Progress_confirmationController extends Controller
 {
     public function index(Request $request)
     {
+        $datas = Process_data::all();
+        $items = $datas->production_items->item_name;
+        $lot_numbers = $datas->lot_numbers->lot_number;
         return view('progress_confirmation.index');
     }
 }

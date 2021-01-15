@@ -19,6 +19,7 @@ class CreateProcessDatasTable extends Migration
             $table->string('start_time');
             $table->date('end_date');
             $table->string('end_time');
+            $table->text('process_remarks');
             $table->timestamps();
         });
     }
