@@ -12,7 +12,11 @@
       </tr>
       @foreach ( $datum as $data )
         <tr>
-          <td rowspan="2" class="underline">###</td>
+          @if ( $data->start_date == $data->end_date )
+            <td rowspan="2" class="progress_td underline">{{ floor((($now_time - $data->start_hour) / ( $data->end_hour - $data->start_hour )) * 100) }}%</td>
+          @else
+            <td rowspan="2" class="progress_td underline">{{ floor((($now_time - $data->start_hour) / ( 24 - $data->start_hour + $data->end_hour )) * 100) }}%</td>
+          @endif
           @foreach ( $data->production_items as $item )
             <td rowspan="2" class="underline">{{ $item->item_name }}</td>
           @endforeach

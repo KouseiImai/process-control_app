@@ -5,7 +5,7 @@
 }
 
 table {
-  margin-top: 40px;
+  margin: 40px 20px;
   overflow-x: auto;
   white-space: nowrap;
 }
@@ -32,6 +32,10 @@ tr {
 td {
   border: solid 1px black;
   text-align: center;
+}
+
+.progress_td {
+  padding: 5px 10px;
 }
 
 .blank_th {
