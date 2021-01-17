@@ -1,5 +1,7 @@
 @extends('layouts.base')
 
+@section('header_title', '工程登録')
+
 @section('content')
   <div class="new_main">
     <div class="input_contents">
@@ -26,22 +28,38 @@
               echo date('Y-m-d');
             ?>
           >
-          <select class="select_form" name="start_time">
-            @foreach($times as $time)
-              <option value="{{ $time }}">{{ $time }}</option>
-            @endforeach
-          </select>
+          <div class="time_form">
+            <select class="hour_select_form" name="start_hour">
+              @foreach(range(0,23) as $h)
+                <option value="{{ $h }}">{{ $h }}</option>
+              @endforeach
+            </select>
+            <div class="hour_text">時</div>
+            <select class="minutes_select_form" name="start_minutes">
+              <option value="0">0</option>
+              <option value="30">30</option>
+            </select>
+            <div class="minutes_text">分</div>
+          </div>
           <label class="label_name">完了予定日時 <div class="required_item">必須項目</div></label>
           <input type="date" name="end_date" value="YYYY-MM-DD" min=
             <?php
               echo date('Y-m-d');
             ?>
           >
-          <select class="select_form" name="end_time">
-            @foreach($times as $time)
-              <option value="{{ $time }}">{{ $time }}</option>
-            @endforeach
-          </select>
+          <div class="time_form">
+            <select class="hour_select_form" name="end_hour">
+              @foreach(range(0,23) as $h)
+                <option value="{{ $h }}">{{ $h }}</option>
+              @endforeach
+            </select>
+            <div class="hour_text">時</div>
+            <select class="minutes_select_form" name="end_minutes">
+              <option value="0">0</option>
+              <option value="30">30</option>
+            </select>
+            <div class="minutes_text">分</div>
+          </div>
           <label class="label_name">備考欄</label>
           <textarea name="process_remarks" class="remarks"></textarea>
           <div class="btn_contest">

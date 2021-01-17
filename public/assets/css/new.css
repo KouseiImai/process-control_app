@@ -60,6 +60,23 @@
   margin: 8px 0 20px 0;
 }
 
+.time_form {
+  display: flex;
+  margin: 8px 0 20px 0;
+}
+
+.hour_select_form {
+  width: 80px;
+}
+
+.hour_text,.minutes_text {
+  margin: 0 30px 0 5px;
+}
+
+.minutes_select_form {
+  width: 80px;
+}
+
 .remarks {
   width: 400px;
   height: 100px;

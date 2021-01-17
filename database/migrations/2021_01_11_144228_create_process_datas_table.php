@@ -16,9 +16,12 @@ class CreateProcessDatasTable extends Migration
         Schema::create('process_datas', function (Blueprint $table) {
             $table->increments('id');
             $table->date('start_date');
-            $table->string('start_time');
+            $table->integer('start_hour');
+            $table->integer('start_minutes');
             $table->date('end_date');
-            $table->string('end_time');
+            $table->integer('end_hour');
+            $table->integer('end_minutes');
+            $table->text('process_remarks')->nullable();
             $table->timestamps();
         });
     }

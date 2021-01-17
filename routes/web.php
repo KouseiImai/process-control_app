@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Process_registrationController;
+use App\Http\Controllers\Progress_confirmationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,3 +26,5 @@ Route::get('/', function () {
 Route::get('/process/new', [Process_registrationController::class, 'new']);
 
 Route::post('/process/create', [Process_registrationController::class, 'create']);
+
+Route::get('/progress/index', [Progress_confirmationController::class, 'index']);
