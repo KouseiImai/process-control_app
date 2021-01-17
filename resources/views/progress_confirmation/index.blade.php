@@ -5,9 +5,9 @@
 @section('content')
   <div class="progress_main">
     <table>
-      <tr class="underline"><th class="th">進捗</th><th class="th">アイテム名</th><th class="th">Lot_number</th><th class="date_th">日付</th><th></th>
+      <tr class="underline"><th class="progress_th">進捗</th><th class="item_th">アイテム名</th><th class="lotnumber_th">ロットナンバー</th><th class="date_th">日付</th><th class="blank_th"></th>
         @foreach(range(0,23) as $hour)
-          <th class="blank_th">{{ $hour }}:00</th>
+          <th class="hour_th">{{ $hour }}:00</th>
         @endforeach
       </tr>
       @foreach ( $datum as $data )
@@ -18,10 +18,10 @@
             <td rowspan="2" class="progress_td underline">{{ floor((($now_time - $data->start_hour) / ( 24 - $data->start_hour + $data->end_hour )) * 100) }}%</td>
           @endif
           @foreach ( $data->production_items as $item )
-            <td rowspan="2" class="underline">{{ $item->item_name }}</td>
+            <td rowspan="2" class="item_td underline">{{ $item->item_name }}</td>
           @endforeach
           @foreach ( $data->lot_numbers as $lot_number )
-            <td rowspan="2" class="underline">{{ $lot_number->lot_number }}</td>
+            <td rowspan="2" class="lotnumber_td underline">{{ $lot_number->lot_number }}</td>
           @endforeach
           <td rowspan="2" class="date_td underline">
             着手日：{{ $data->start_date }}
@@ -74,7 +74,7 @@
           </div>
         </tr>
         <tr class="underline">
-          <td>現在</td>
+          <td class="existent_td">現在</td>
           @if ( $data->start_hour == 0 )
             @foreach(range( $data->start_hour,$now_time - 1 ) as $hour)
               <td class="current_td"><div class="current"></div></td>

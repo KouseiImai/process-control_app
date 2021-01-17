@@ -18,15 +18,52 @@ tr {
   border-bottom: double 4px black;
 }
 
-.th {
+.progress_th {
+  margin-left: 20px;
   padding: 5px 10px;
   border: solid 1px black;
   text-align: center;
+  position: sticky;
+  left: 0px;
+  color: white;
+  background: #bcddff;
+}
+
+.item_th {
+  padding: 5px 10px;
+  border: solid 1px black;
+  text-align: center;
+  position: sticky;
+  left: 67px;
+  color: white;
+  background: #bcddff;
+}
+
+.lotnumber_th {
+  padding: 5px 10px;
+  border: solid 1px black;
+  text-align: center;
+  position: sticky;
+  left: 166px;
+  color: white;
+  background: #bcddff;
 }
 
 .date_th {
   border: solid 1px black;
   text-align: center;
+  position: sticky;
+  left: 283px;
+  color: white;
+  background: #bcddff;
+}
+
+.blank_th {
+  position: sticky;
+  left: 464px;
+  color: #fff;
+  background: white;
+  border-bottom: double 4px black;
 }
 
 td {
@@ -36,19 +73,72 @@ td {
 
 .progress_td {
   padding: 5px 10px;
+  position: sticky;
+  left: 0px;
+  color: #33cc00;
+  background: white;
 }
 
-.blank_th {
+.item_td {
+  position: sticky;
+  left: 67px;
+  color: #404040;
+  background: white;
+}
+
+.lotnumber_td {
+  position: sticky;
+  left: 166px;
+  color: #404040;
+  background: white;
+}
+
+.hour_th {
   padding-right: 40px;
   border: none;
 }
 
 .date_td {
   padding: 5px 10px;
+  position: sticky;
+  left: 283px;
+  color: #9f9f9f;
+  background: white;
 }
 
 .schedule_td {
   padding: 0 10px;
+  position: sticky;
+  left: 464px;
+  color: #fff;
+  background: #90ee90;
+}
+
+.existent_td {
+  padding: 0 10px;
+  position: sticky;
+  left: 464px;
+  color: #fff;
+  background: #c0c0c0;
+}
+
+.progress_th:before,
+.item_th:before,
+.lotnumber_th:before,
+.date_th:before,
+.progress_td:before,
+.item_td:before,
+.lotnumber_td:before,
+.date_td:before,
+.schedule_td:before,
+.existent_td:before {
+  content: "";
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
 }
 
 .plans {
