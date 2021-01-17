@@ -3,5 +3,79 @@
 @section('header_title', '進捗確認表')
 
 @section('content')
-
+  <div class="progress_main">
+    <table>
+      <tr class="underline"><th class="th">進捗</th><th class="th">アイテム名</th><th class="th">Lot_number</th><th class="date_th">日付</th><th></th>
+        @foreach(range(0,23) as $hour)
+          <th class="blank_th">{{ $hour }}:00</th>
+        @endforeach
+      </tr>
+      @foreach ( $datum as $data )
+        <tr>
+          <td rowspan="2" class="underline">###</td>
+          @foreach ( $data->production_items as $item )
+            <td rowspan="2" class="underline">{{ $item->item_name }}</td>
+          @endforeach
+          @foreach ( $data->lot_numbers as $lot_number )
+            <td rowspan="2" class="underline">{{ $lot_number->lot_number }}</td>
+          @endforeach
+          <td rowspan="2" class="date_td underline">
+            着手日：{{ $data->start_date }}
+          </td>
+          <td class="schedule_td">計画</td>
+          <div>
+            @if ( $data->start_date == $data->end_date )
+              @if ( $data->start_hour == 0 )
+                @foreach(range(0,$data->end_hour - 1) as $hour)
+                  <td class="plans_td"><div class="plans"></div></td>
+                @endforeach
+                @foreach(range($data->end_hour,23) as $hour)
+                  <td class="blank_td"></td>
+                @endforeach
+              @elseif ( $data->start_hour == 23 )
+                @foreach(range(0,22) as $hour)
+                  <td class="blank_td"></td>
+                @endforeach
+                <td class="plans_td"><div class="plans"></div></td>
+              @else
+                @foreach(range(1,$data->start_hour) as $hour)
+                  <td class="blank_td"></td>
+                @endforeach
+                @foreach(range($data->start_hour,$data->end_hour - 1) as $hour)
+                  <td class="plans_td"><div class="plans"></div></td>
+                @endforeach
+                @foreach(range($data->end_hour,23) as $hour)
+                  <td class="blank_td"></td>
+                @endforeach
+              @endif
+            @else
+              @if ( $data->start_hour == 0 )
+                @foreach(range(0,23) as $hour)
+                  <td class="plans_td"><div class="plans"></div></td>
+                @endforeach
+              @elseif ( $data->start_hour == 23 )
+                @foreach(range(0,22) as $hour)
+                  <td class="blank_td"></td>
+                @endforeach
+                <td class="plans_td"><div class="plans"></div></td>
+              @else
+                @foreach(range(1,$data->start_hour) as $hour)
+                  <td class="blank_td"></td>
+                @endforeach
+                @foreach(range($data->start_hour,23) as $hour)
+                  <td class="plans_td"><div class="plans"></div></td>
+                @endforeach
+              @endif
+            @endif
+          </div>
+        </tr>
+        <tr class="underline">
+          <td>現在</td>
+          @foreach(range(0,23) as $hour)
+            <td class="current_td"></td>
+          @endforeach
+        </tr>
+      @endforeach
+    </table>
+  </div>
 @endsection

@@ -1,0 +1,63 @@
+.progress_main {
+  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+table {
+  margin-top: 40px;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+tr {
+  border: solid 1px black;
+}
+
+.underline {
+  border-bottom: double 4px black;
+}
+
+.th {
+  padding: 5px 10px;
+  border: solid 1px black;
+  text-align: center;
+}
+
+.date_th {
+  border: solid 1px black;
+  text-align: center;
+}
+
+td {
+  border: solid 1px black;
+  text-align: center;
+}
+
+.blank_th {
+  padding-right: 40px;
+  border: none;
+}
+
+.date_td {
+  padding: 5px 10px;
+}
+
+.schedule_td {
+  padding: 0 10px;
+}
+
+.plans {
+  padding: 6px 0;
+  background-color: #87FB00;
+}
+
+.plans_half {
+  padding: 6px 0;
+  margin-left: 40px;
+  background-color: #87FB00;
+}
+
+.current_td {
+  border: solid 1px black;
+}
