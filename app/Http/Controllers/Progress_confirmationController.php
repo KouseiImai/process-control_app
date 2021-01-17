@@ -14,6 +14,7 @@ class Progress_confirmationController extends Controller
     public function index(Request $request)
     {
         $datum = Process_data::all();
-        return view('progress_confirmation.index', compact('datum'));
+        $now_time = date("H");
+        return view('progress_confirmation.index', compact('datum','now_time'));
     }
 }

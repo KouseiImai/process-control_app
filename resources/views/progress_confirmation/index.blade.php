@@ -71,9 +71,24 @@
         </tr>
         <tr class="underline">
           <td>現在</td>
-          @foreach(range(0,23) as $hour)
-            <td class="current_td"></td>
-          @endforeach
+          @if ( $data->start_hour == 0 )
+            @foreach(range( $data->start_hour,$now_time - 1 ) as $hour)
+              <td class="current_td"><div class="current"></div></td>
+            @endforeach
+            @foreach(range( $now_time - 1, 22 ) as $hour)
+              <td class="current_td"></td>
+            @endforeach
+          @else
+            @foreach(range( 0, $data->start_hour - 1 ) as $hour)
+              <td class="current_td"></td>
+            @endforeach
+            @foreach(range( $data->start_hour,$now_time - 1 ) as $hour)
+              <td class="current_td"><div class="current"></div></td>
+            @endforeach
+            @foreach(range( $now_time - 1, 22 ) as $hour)
+              <td class="current_td"></td>
+            @endforeach
+          @endif
         </tr>
       @endforeach
     </table>

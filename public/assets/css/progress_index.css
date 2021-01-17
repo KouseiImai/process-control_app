@@ -49,15 +49,26 @@ td {
 
 .plans {
   padding: 6px 0;
-  background-color: #87FB00;
+  background-color: #98fb98;
 }
 
-.plans_half {
+.plans_start_half {
   padding: 6px 0;
   margin-left: 40px;
-  background-color: #87FB00;
+  background-color: #98fb98;
+}
+
+.plans_end_half {
+  padding: 6px 0;
+  margin-right: 40px;
+  background-color: #98fb98;
 }
 
 .current_td {
   border: solid 1px black;
+}
+
+.current {
+  padding: 6px 0;
+  background-color: #a9a9a9;
 }
