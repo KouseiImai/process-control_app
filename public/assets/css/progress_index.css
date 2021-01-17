@@ -166,3 +166,9 @@ td {
   padding: 6px 0;
   background-color: #a9a9a9;
 }
+
+.current_half {
+  padding: 6px 0;
+  margin-left: 40px;
+  background-color: #a9a9a9;
+}
