@@ -42,60 +42,48 @@
                 <!-- 着手日と完了予定日が同日で着手時間が0時 -->
                 @if ( $data->start_minutes == 30 )
                   <!-- 着手日と完了予定日が同日で着手時間が0時で分単位が30分 -->
-                  @foreach(range(0,0) as $hour)
-                    <td class="plans_td"><div class="plans_start_half"></div></td>
-                  @endforeach
+                  <td class="plans_td"><div class="plans_start_half"></div></td>
+                  <!-- 着手時間が0時の分単位が30分でかつ完了予定時間の分単位が30分 -->
+                  @for($i = 1; $i < ($data->end_hour); $i++)
+                    <td class="plans_td"><div class="plans"></div></td>
+                  @endfor
                   @if ( $data->end_minutes == 30 )
-                    <!-- 着手時間が0時の分単位が30分でかつ完了予定時間の分単位が30分 -->
-                    @foreach(range(1,$data->end_hour - 1) as $hour)
-                      <td class="plans_td"><div class="plans"></div></td>
-                    @endforeach
-                    @foreach(range($data->end_hour,$data->end_hour) as $hour)
                     <td class="plans_td"><div class="plans_end_half"></div></td>
-                    @endforeach
-                    @foreach(range($data->end_hour - 1 , 22) as $hour)
+                    @for($i = ($data->end_hour + 1); $i < 24; $i++)
                       <td class="blank_td"></td>
-                    @endforeach
+                    @endfor
                   @else
                     <!-- 着手時間が0時の分単位が30分でかつ完了予定時間の分単位が0分 -->
-                    @foreach(range(1,$data->end_hour - 1) as $hour)
-                      <td class="plans_td"><div class="plans"></div></td>
-                    @endforeach
-                    @foreach(range($data->end_hour, 22) as $hour)
+                    @for($i = ($data->end_hour); $i < 24; $i++)
                       <td class="blank_td"></td>
-                    @endforeach
+                    @endfor
                   @endif
                 @else
+                  <!-- 着手時間が0時の分単位が0分でかつ完了予定時間の分単位が30分 -->
+                  @for($i = 0; $i < ($data->end_hour); $i++)
+                    <td class="plans_td"><div class="plans"></div></td>
+                  @endfor
                   @if ( $data->end_minutes == 30 )
-                    <!-- 着手時間が0時の分単位が0分でかつ完了予定時間の分単位が30分 -->
-                    @foreach(range(0,$data->end_hour - 1) as $hour)
-                      <td class="plans_td"><div class="plans"></div></td>
-                    @endforeach
-                    @foreach(range($data->end_hour,$data->end_hour) as $hour)
                     <td class="plans_td"><div class="plans_end_half"></div></td>
-                    @endforeach
-                    @foreach(range($data->end_hour - 1, 23) as $hour)
+                    @for($i = ($data->end_hour + 1); $i < 24; $i++)
                       <td class="blank_td"></td>
-                    @endforeach
+                    @endfor
                   @else
                     <!-- 着手時間が0時の分単位が0分でかつ完了予定時間の分単位が0分 -->
-                    @foreach(range(1,$data->end_hour) as $hour)
-                      <td class="plans_td"><div class="plans"></div></td>
-                    @endforeach
-                    @foreach(range($data->end_hour,22) as $hour)
+                    @for($i = ($data->end_hour); $i < 24; $i++)
                       <td class="blank_td"></td>
-                    @endforeach
+                    @endfor
                   @endif
                 @endif
               @elseif ( $data->start_hour == 23 )
                 <!-- 着手日と完了予定日が同日で着手時間が23時 -->
-                @foreach(range(0,22) as $hour)
+                @for($i = 0; $i < 23; $i++)
                   <td class="blank_td"></td>
-                @endforeach
+                @endfor
                 @if ( $data->start_minutes == 30 )
                   <!-- 着手時間が23時で完了予定時間の分単位が0分 -->
                   <td class="plans_td"><div class="plans_start_half"></div></td>
-                @elseif ( $data->end_minutes == 30 )
+                @elseif ( $data->start_minutes == 0 && $data->end_minutes == 30 )
                   <!-- 着手時間が23時で完了予定時間の分単位が30分 -->
                   <td class="plans_td"><div class="plans_end_half"></div></td>
                 @else
@@ -104,53 +92,43 @@
                 @endif
               @else
                 <!-- 着手日と完了予定日が同日で着手時間が1時以降 -->
-                @foreach(range(1,$data->start_hour) as $hour)
+                @for($i = 0; $i < $data->start_hour; $i++)
                   <td class="blank_td"></td>
-                @endforeach
+                @endfor
                 @if ( $data->start_minutes == 30 )
                   <!-- 着手時間が1時以降で着手時間の分単位が30分 -->
+                  <td class="plans_td"><div class="plans_start_half"></div></td>
+                  @for($i = ($data->start_hour + 1); $i < ($data->end_hour); $i++)
+                    <td class="plans_td"><div class="plans"></div></td>
+                  @endfor
                   @if ( $data->end_minutes == 30 )
                     <!-- 着手時間が1時以降で着手開始の分単位が30分で完了予定時間の分単位が30分 -->
-                    @foreach(range($data->start_hour,$data->start_hour) as $hour)
-                      <td class="plans_td"><div class="plans_start_half"></div></td>
-                    @endforeach
-                    @foreach(range($data->start_hour + 1,$data->end_hour - 1) as $hour)
-                      <td class="plans_td"><div class="plans"></div></td>
-                    @endforeach
-                    @foreach(range($data->end_hour,$data->end_hour) as $hour)
-                      <td class="plans_td"><div class="plans_end_half"></div></td>
-                    @endforeach
-                  @else
-                    <!-- 着手時間が1時以降で着手開始の分単位が30分で完了予定時間の分単位が0分 -->
-                    @foreach(range($data->start_hour,$data->start_hour) as $hour)
-                      <td class="plans_td"><div class="plans_start_half"></div></td>
-                    @endforeach
-                    @foreach(range($data->start_hour + 1,$data->end_hour - 1) as $hour)
-                      <td class="plans_td"><div class="plans"></div></td>
-                    @endforeach
+                    <td class="plans_td"><div class="plans_end_half"></div></td>
+                    @for($i = ($data->end_hour - 1); $i < 24; $i++)
+                      <td class="blank_td"></td>
+                    @endfor
                   @endif
-                  @foreach(range($data->end_hour,22) as $hour)
+                  <!-- 着手時間が1時以降で着手開始の分単位が30分で完了予定時間の分単位が0分 -->
+                  @for($i = ($data->end_hour); $i < 24; $i++)
                     <td class="blank_td"></td>
-                  @endforeach
+                  @endfor
                 @else
                   <!-- 着手日と完了予定日が同日で着手時間が1時以降 -->
+                  @for($i = ($data->start_hour); $i < ($data->end_hour); $i++)
+                    <td class="plans_td"><div class="plans"></div></td>
+                  @endfor
                   @if ( $data->end_minutes == 30 )
                     <!-- 着手時間が1時以降で着手開始の分単位が0分で完了予定時間の分単位が30分 -->
-                    @foreach(range($data->start_hour,$data->end_hour - 1) as $hour)
-                      <td class="plans_td"><div class="plans"></div></td>
-                    @endforeach
-                    @foreach(range($data->end_hour,$data->end_hour) as $hour)
-                      <td class="plans_td"><div class="plans_end_half"></div></td>
-                    @endforeach
+                    <td class="plans_td"><div class="plans_end_half"></div></td>
+                    @for($i = ($data->end_hour + 1); $i < 24; $i++)
+                      <td class="blank_td"></td>
+                    @endfor
                   @else
                     <!-- 着手時間が1時以降で着手開始の分単位が0分で完了予定時間の分単位が0分 -->
-                    @foreach(range($data->start_hour,$data->end_hour - 1) as $hour)
-                      <td class="plans_td"><div class="plans"></div></td>
-                    @endforeach
+                    @for($i = ($data->end_hour); $i < 24; $i++)
+                      <td class="blank_td"></td>
+                    @endfor
                   @endif
-                  @foreach(range($data->end_hour,22) as $hour)
-                    <td class="blank_td"></td>
-                  @endforeach
                 @endif
               @endif
             @else
@@ -159,23 +137,21 @@
                 <!-- 着手日より完了予定日が後で着手開始時間が0時 -->
                 @if ( $data->start_minutes == 30 )
                   <!-- 着手開始時間の分単位が30分 -->
-                  @foreach(range(0,0) as $hour)
-                    <td class="plans_td"><div class="plans_start_half"></div></td>
-                  @endforeach
-                  @foreach(range(1,23) as $hour)
+                  <td class="plans_td"><div class="plans_start_half"></div></td>
+                  @for($i = 1; $i < 24; $i++)
                     <td class="plans_td"><div class="plans"></div></td>
-                  @endforeach
+                  @endfor
                 @else
                   <!-- 着手開始時間の分単位が0分 -->
-                  @foreach(range(0,23) as $hour)
+                  @for($i = 0; $i < 24; $i++)
                     <td class="plans_td"><div class="plans"></div></td>
-                  @endforeach
+                  @endfor
                 @endif
               @elseif ( $data->start_hour == 23 )
                 <!-- 着手日より完了予定日が後で着手開始時間が23時 -->
-                @foreach(range(0,22) as $hour)
+                @for($i = 0; $i < 23; $i++)
                   <td class="blank_td"></td>
-                @endforeach
+                @endfor
                 @if ( $data->start_minutes == 30 )
                   <!-- 着手開始時間の分単位が30分 -->
                   <td class="plans_td"><div class="plans_start_half"></div></td>
@@ -185,22 +161,20 @@
                 @endif
               @else
                 <!-- 着手日より完了予定日が後で着手開始時間が1時以降 -->
-                @foreach(range(1,$data->start_hour) as $hour)
+                @for($i = 0; $i < $data->start_hour; $i++)
                   <td class="blank_td"></td>
-                @endforeach
+                @endfor
                 @if ( $data->start_minutes == 30 )
                   <!-- 着手日より完了予定日が後で着手開始時間が1時以降で着手予定時間の分単位が30分 -->
-                  @foreach(range($data->start_hour,$data->start_hour) as $hour)
-                    <td class="plans_td"><div class="plans_start_half"></div></td>
-                  @endforeach
-                  @foreach(range($data->start_hour + 1,23) as $hour)
+                  <td class="plans_td"><div class="plans_start_half"></div></td>
+                  @for($i = ($data->start_hour + 1); $i < 24; $i++)
                     <td class="plans_td"><div class="plans"></div></td>
-                  @endforeach
+                  @endfor
                 @else
                   <!-- 着手日より完了予定日が後で着手開始時間が1時以降で着手予定時間の分単位が0分 -->
-                  @foreach(range($data->start_hour,23) as $hour)
+                  @for($i = ($data->start_hour); $i < 24; $i++)
                     <td class="plans_td"><div class="plans"></div></td>
-                  @endforeach
+                  @endfor
                 @endif
               @endif
             @endif
@@ -208,53 +182,46 @@
         </tr>
         <tr class="underline">
           <td class="existent_td">現在</td>
-          @if ( $data->start_hour <= $now_time )
+          @if ( $data->start_hour < $now_time )
             @if ( $data->start_hour == 0 )
               <!-- 着手時間が0時の場合 -->
               @if ( $data->start_minutes == 30 )
                 <!-- 着手時間の分単位が30分 -->
-                @foreach(range( $data->start_hour,$data->start_hour ) as $hour)
-                  <td class="current_td"><div class="current_half"></div></td>
-                @endforeach
-                @foreach(range( $data->start_hour - 1,$now_time - 1 ) as $hour)
+                <td class="current_td"><div class="current_half"></div></td>
+                @for($i = ($data->start_hour); $i < $now_time; $i++)
                   <td class="current_td"><div class="current"></div></td>
-                @endforeach
+                @endfor
               @else
                 <!-- 着手時間の分単位が0分 -->
-                @foreach(range( $data->start_hour,$now_time - 1 ) as $hour)
+                @for($i = ($data->start_hour); $i < $now_time; $i++)
                   <td class="current_td"><div class="current"></div></td>
-                @endforeach
+                @endfor
               @endif
-                @foreach(range( $now_time - 1, 22 ) as $hour)
-                  <td class="current_td"></td>
-                @endforeach
             @else
               <!-- 着手時間が1時以降の場合 -->
-              @foreach(range( 0, $data->start_hour - 1 ) as $hour)
+              @for($i = 0; $i < ($data->start_hour); $i++)
                 <td class="current_td"></td>
-              @endforeach
+              @endfor
               @if ( $data->start_minutes == 30 )
                 <!-- 着手時間の分単位が30分 -->
-                @foreach(range( $data->start_hour,$data->start_hour ) as $hour)
-                  <td class="current_td"><div class="current_half"></div></td>
-                @endforeach
-                @foreach(range( $data->start_hour - 1,$now_time - 1 ) as $hour)
+                <td class="current_td"><div class="current_half"></div></td>
+                @for($i = ($data->start_hour); $i < $now_time; $i++)
                   <td class="current_td"><div class="current"></div></td>
-                @endforeach
+                @endfor
               @else
                 <!-- 着手時間の分単位が0分 -->
-                @foreach(range( $data->start_hour,$now_time - 1 ) as $hour)
+                @for($i = ($data->start_hour); $i < $now_time; $i++)
                   <td class="current_td"><div class="current"></div></td>
-                @endforeach
+                @endfor
               @endif
-              @foreach(range( $now_time - 1, 22 ) as $hour)
-                <td class="current_td"></td>
-              @endforeach
+              @for($i = ($now_time); $i < 24; $i++)
+                  <td class="current_td"></td>
+              @endfor
             @endif
           @else
-            @foreach(range( 0, 23 ) as $hour)
+            @for($i = 0; $i < 24; $i++)
               <td class="current_td"></td>
-            @endforeach
+            @endfor
           @endif
         </tr>
       @endforeach
