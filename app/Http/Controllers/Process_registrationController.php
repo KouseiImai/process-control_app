@@ -14,8 +14,7 @@ class Process_registrationController extends Controller
 {
     public function new(Request $request)
     {
-        $times = config('time');
-        return view('process_registration.new')->with(['times' => $times]);
+        return view('process_registration.new');
     }
 
     public function create(Process_registrationRequest $request)
