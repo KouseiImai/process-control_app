@@ -188,24 +188,7 @@
               @if ( $data->start_minutes == 30 )
                 <!-- 着手時間の分単位が30分 -->
                 <td class="current_td"><div class="current_half"></div></td>
-                @for($i = ($data->start_hour); $i < $now_time; $i++)
-                  <td class="current_td"><div class="current"></div></td>
-                @endfor
-              @else
-                <!-- 着手時間の分単位が0分 -->
-                @for($i = ($data->start_hour); $i < $now_time; $i++)
-                  <td class="current_td"><div class="current"></div></td>
-                @endfor
-              @endif
-            @else
-              <!-- 着手時間が1時以降の場合 -->
-              @for($i = 0; $i < ($data->start_hour); $i++)
-                <td class="current_td"></td>
-              @endfor
-              @if ( $data->start_minutes == 30 )
-                <!-- 着手時間の分単位が30分 -->
-                <td class="current_td"><div class="current_half"></div></td>
-                @for($i = ($data->start_hour); $i < $now_time; $i++)
+                @for($i = ($data->start_hour); $i < ($now_time - 1); $i++)
                   <td class="current_td"><div class="current"></div></td>
                 @endfor
               @else
@@ -215,7 +198,27 @@
                 @endfor
               @endif
               @for($i = ($now_time); $i < 24; $i++)
-                  <td class="current_td"></td>
+                <td class="current_td"></td>
+              @endfor
+            @else
+              <!-- 着手時間が1時以降の場合 -->
+              @for($i = 0; $i < ($data->start_hour); $i++)
+                <td class="current_td"></td>
+              @endfor
+              @if ( $data->start_minutes == 30 )
+                <!-- 着手時間の分単位が30分 -->
+                <td class="current_td"><div class="current_half"></div></td>
+                @for($i = ($data->start_hour); $i < ($now_time - 1); $i++)
+                  <td class="current_td"><div class="current"></div></td>
+                @endfor
+              @else
+                <!-- 着手時間の分単位が0分 -->
+                @for($i = ($data->start_hour); $i < $now_time; $i++)
+                  <td class="current_td"><div class="current"></div></td>
+                @endfor
+              @endif
+              @for($i = ($now_time); $i < 24; $i++)
+                <td class="current_td"></td>
               @endfor
             @endif
           @else
