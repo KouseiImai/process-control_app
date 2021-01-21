@@ -19,9 +19,19 @@
         @csrf
         <div class="form_contents">
           <label class="label_name">アイテム名 <div class="required_item">必須項目</div></label>
-          <input type="text" name="item_name" class="input_form">
+          <select class="select_form" name="item_name">
+            <option value="">--</option>
+            @foreach($item_names as $item_name)
+              <option value="{{ $item_name->item_name }}">{{ $item_name->item_name }}</option>
+            @endforeach
+          </select>
           <label class="label_name">Lot_No <div class="required_item">必須項目</div></label>
-          <input type="text" name="lot_number" class="input_form">
+          <select class="select_form" name="lot_number">
+            <option value="">--</option>
+            @foreach($lot_numbers as $lot_number)
+              <option value="{{ $lot_number->lot_number }}">{{ $lot_number->lot_number }}</option>
+            @endforeach
+          </select>
           <label class="label_name">生産枚数 <div class="required_item">必須項目</div></label>
           <input type="text" name="production_num" class="num_form"><div class="num_text">枚</div>
           <label class="label_name">生産完了時間 <div class="required_item">必須項目</div></label>
