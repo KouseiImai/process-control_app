@@ -33,7 +33,9 @@
             @endforeach
           </select>
           <label class="label_name">生産枚数 <div class="required_item">必須項目</div></label>
-          <input type="text" name="production_num" class="num_form"><div class="num_text">枚</div>
+          <div class="input_num_form">
+            <input type="text" name="production_num" class="num_form"><div class="num_text">枚</div>
+          </div>
           <label class="label_name">生産完了時間 <div class="required_item">必須項目</div></label>
           <div class="time_form">
             <select class="hour_select_form" name="done_hour">
