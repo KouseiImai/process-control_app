@@ -15,7 +15,7 @@
           </ul>
         </div>
       @endif
-      <form method="POST" action="/process/create">
+      <form method="POST" action="/report/create">
         @csrf
         <div class="form_contents">
           <label class="label_name">アイテム名 <div class="required_item">必須項目</div></label>
