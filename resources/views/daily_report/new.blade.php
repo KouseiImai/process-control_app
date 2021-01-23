@@ -39,12 +39,14 @@
           <label class="label_name">生産完了時間 <div class="required_item">必須項目</div></label>
           <div class="time_form">
             <select class="hour_select_form" name="done_hour">
+              <option value="">--</option>
               @foreach(range(0,23) as $h)
                 <option value="{{ $h }}">{{ $h }}</option>
               @endforeach
             </select>
             <div class="hour_text">時</div>
             <select class="minutes_select_form" name="done_minutes">
+              <option value="">--</option>
               <option value="0">0</option>
               <option value="30">30</option>
             </select>
@@ -53,12 +55,14 @@
           <label class="label_name">故障時間</label>
           <div class="time_form">
             <select class="hour_select_form" name="accident_hour">
+              <option value="">--</option>
               @foreach(range(0,23) as $h)
                 <option value="{{ $h }}">{{ $h }}</option>
               @endforeach
             </select>
             <div class="hour_text">時</div>
             <select class="minutes_select_form" name="accident_minutes">
+              <option value="">--</option>
               <option value="0">0</option>
               <option value="30">30</option>
             </select>
@@ -67,12 +71,14 @@
           <label class="label_name">前工程待ち時間</label>
           <div class="time_form">
             <select class="hour_select_form" name="pre_process_hour">
+              <option value="">--</option>
               @foreach(range(0,23) as $h)
                 <option value="{{ $h }}">{{ $h }}</option>
               @endforeach
             </select>
             <div class="hour_text">時</div>
             <select class="minutes_select_form" name="pre_process_minutes">
+              <option value="">--</option>
               <option value="0">0</option>
               <option value="30">30</option>
             </select>
