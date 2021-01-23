@@ -31,3 +31,5 @@ Route::post('/process/create', [Process_registrationController::class, 'create']
 Route::get('/progress/index', [Progress_confirmationController::class, 'index']);
 
 Route::get('/report/new', [Daily_reportController::class, 'new']);
+
+Route::post('/report/create', [Daily_reportController::class, 'create']);
