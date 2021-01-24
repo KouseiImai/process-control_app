@@ -14,7 +14,7 @@ class CreateDailyReportsTable extends Migration
     public function up()
     {
         Schema::create('daily_reports', function (Blueprint $table) {
-            $table->id();
+            $table->increments('id');
             $table->integer('production_num');
             $table->integer('done_hour');
             $table->integer('done_minutes');

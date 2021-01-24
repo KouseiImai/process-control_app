@@ -20,7 +20,7 @@ class CreateItemReportRelationsTable extends Migration
             $table->timestamps();
 
             $table->foreign('production_item_id')->references('id')->on('production_items')->onDelete('cascade');
-            $table->foreugn('daily_report_id')->references('id')->on('daily_reports')->onDelete('cascade');
+            $table->foreign('daily_report_id')->references('id')->on('daily_reports')->onDelete('cascade');
         });
     }
 
