@@ -30,12 +30,14 @@
           >
           <div class="time_form">
             <select class="hour_select_form" name="start_hour">
+              <option value="">--</option>
               @foreach(range(0,23) as $h)
                 <option value="{{ $h }}">{{ $h }}</option>
               @endforeach
             </select>
             <div class="hour_text">時</div>
             <select class="minutes_select_form" name="start_minutes">
+              <option value="">--</option>
               <option value="0">0</option>
               <option value="30">30</option>
             </select>
@@ -49,12 +51,14 @@
           >
           <div class="time_form">
             <select class="hour_select_form" name="end_hour">
+              <option value="">--</option>
               @foreach(range(0,23) as $h)
                 <option value="{{ $h }}">{{ $h }}</option>
               @endforeach
             </select>
             <div class="hour_text">時</div>
             <select class="minutes_select_form" name="end_minutes">
+              <option value="">--</option>
               <option value="0">0</option>
               <option value="30">30</option>
             </select>

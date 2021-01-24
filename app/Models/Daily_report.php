@@ -5,31 +5,31 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Production_item extends Model
+class Daily_report extends Model
 {
     use HasFactory;
 
-    public function process_datas()
+    public function lot_numbers()
     {
         return $this->hasManyThrough(
-            'App\Models\Process_data',
-            'App\Models\Item_process_relation',
-            'production_item_id',
+            'App\Models\Lot_number',
+            'App\Models\Lotnumber_report_relation',
+            'daily_report_id',
             'id',
             'id',
-            'process_data_id'
+            'lot_number_id'
         );
     }
 
-    public function daily_reports()
+    public function production_items()
     {
         return $this->hasManyThrough(
-            'App\Models\Daily_report',
+            'App\Models\Production_item',
             'App\Models\Item_report_relation',
-            'production_item_id',
+            'daily_report_id',
             'id',
             'id',
-            'daily_report_id'
+            'production_item_id'
         );
     }
 }
