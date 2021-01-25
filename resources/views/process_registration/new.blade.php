@@ -3,7 +3,7 @@
 @section('header_title', '工程登録')
 
 @section('content')
-  <div class="new_main">
+  <div class="form_main">
     <div class="input_contents">
       <h1 class="input_index">登録項目<h1>
       @if ( count($errors) > 0 )

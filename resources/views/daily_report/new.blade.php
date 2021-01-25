@@ -3,7 +3,7 @@
 @section('header_title', '日報入力')
 
 @section('content')
-<div class="new_main">
+<div class="form_main">
     <div class="input_contents">
       <h1 class="input_index">日報入力項目<h1>
       @if ( count($errors) > 0 )
