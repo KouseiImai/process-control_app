@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Process_registrationController;
 use App\Http\Controllers\Progress_confirmationController;
 use App\Http\Controllers\Daily_reportController;
+use App\Http\Controllers\SearchController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,3 +34,5 @@ Route::get('/progress/index', [Progress_confirmationController::class, 'index'])
 Route::get('/report/new', [Daily_reportController::class, 'new']);
 
 Route::post('/report/create', [Daily_reportController::class, 'create']);
+
+Route::get('/search/index', [SearchController::class, 'index']);
