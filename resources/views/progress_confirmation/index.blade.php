@@ -104,14 +104,15 @@
                   @if ( $data->end_minutes == 30 )
                     <!-- 着手時間が1時以降で着手開始の分単位が30分で完了予定時間の分単位が30分 -->
                     <td class="plans_td"><div class="plans_end_half"></div></td>
-                    @for($i = ($data->end_hour - 1); $i < 24; $i++)
+                    @for($i = ($data->end_hour + 1); $i < 24; $i++)
+                      <td class="blank_td"></td>
+                    @endfor
+                  @else
+                    <!-- 着手時間が1時以降で着手開始の分単位が30分で完了予定時間の分単位が0分 -->
+                    @for($i = ($data->end_hour); $i < 24; $i++)
                       <td class="blank_td"></td>
                     @endfor
                   @endif
-                  <!-- 着手時間が1時以降で着手開始の分単位が30分で完了予定時間の分単位が0分 -->
-                  @for($i = ($data->end_hour); $i < 24; $i++)
-                    <td class="blank_td"></td>
-                  @endfor
                 @else
                   <!-- 着手日と完了予定日が同日で着手時間が1時以降 -->
                   @for($i = ($data->start_hour); $i < ($data->end_hour); $i++)
