@@ -1,0 +1,11 @@
+.date_contents {
+  display: flex;
+  height: 40px;
+  margin-bottom: 60px;
+}
+
+.tilde {
+  margin: 0 20px;
+  font-size: 30px;
+  font-weight: 900;
+}
