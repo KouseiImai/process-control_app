@@ -36,3 +36,5 @@ Route::get('/report/new', [Daily_reportController::class, 'new']);
 Route::post('/report/create', [Daily_reportController::class, 'create']);
 
 Route::get('/search/index', [SearchController::class, 'index']);
+
+Route::post('/search/data_search', [SearchController::class, 'data_search']);

@@ -19,7 +19,7 @@
         @csrf
         <div class="form_contents">
           <label class="label_name">アイテム名</label>
-          <select class="select_form" name="item">
+          <select class="select_form" name="item_name">
             <option value="">--</option>
             @foreach($item_names as $item_name)
               <option value="{{ $item_name->item_name }}">{{ $item_name->item_name }}</option>
