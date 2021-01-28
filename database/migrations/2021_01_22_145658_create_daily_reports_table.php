@@ -16,6 +16,7 @@ class CreateDailyReportsTable extends Migration
         Schema::create('daily_reports', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('production_num');
+            $table->date('done_date');
             $table->integer('done_hour');
             $table->integer('done_minutes');
             $table->integer('accident_hour')->nullable();

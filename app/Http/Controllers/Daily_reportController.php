@@ -23,6 +23,7 @@ class Daily_reportController extends Controller
     public function create(Daily_reportRequest $request) {
         $daily_report = new Daily_report;
         $daily_report->production_num = $request->production_num;
+        $daily_report->done_date = date('Y-m-d');
         $daily_report->done_hour = $request->done_hour;
         $daily_report->done_minutes = $request->done_minutes;
         $daily_report->accident_hour = $request->accident_hour;
