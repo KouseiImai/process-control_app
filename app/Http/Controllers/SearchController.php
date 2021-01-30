@@ -21,10 +21,10 @@ class SearchController extends Controller
 
     public function data_search (Request $request)
     {
-        $item = $request->item_name;
+        $item       = $request->item_name;
         $lot_number = $request->lot_number;
         $start_date = $request->start_date;
-        $end_date = $request->end_date;
+        $end_date   = $request->end_date;
 
         if ( $start_date != null && $end_date != null )
         {

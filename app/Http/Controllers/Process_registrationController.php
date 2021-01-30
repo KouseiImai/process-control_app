@@ -28,23 +28,23 @@ class Process_registrationController extends Controller
         $production_item->save();
 
         $process_data = new Process_data;
-        $process_data->start_date = $request->start_date;
-        $process_data->start_hour = $request->start_hour;
-        $process_data->start_minutes = $request->start_minutes;
-        $process_data->end_date = $request->end_date;
-        $process_data->end_hour = $request->end_hour;
-        $process_data->end_minutes = $request->end_minutes;
+        $process_data->start_date      = $request->start_date;
+        $process_data->start_hour      = $request->start_hour;
+        $process_data->start_minutes   = $request->start_minutes;
+        $process_data->end_date        = $request->end_date;
+        $process_data->end_hour        = $request->end_hour;
+        $process_data->end_minutes     = $request->end_minutes;
         $process_data->process_remarks = $request->process_remarks;
         $process_data->save();
 
         $lot_process_relation = new Lotnumber_process_relation;
-        $lot_process_relation->lot_number_id = $lot_number->id;
+        $lot_process_relation->lot_number_id   = $lot_number->id;
         $lot_process_relation->process_data_id = $process_data->id;
         $lot_process_relation->save();
 
         $item_process_relation = new Item_process_relation;
         $item_process_relation->production_item_id = $production_item->id;
-        $item_process_relation->process_data_id = $process_data->id;
+        $item_process_relation->process_data_id    = $process_data->id;
         $item_process_relation->save();
 
         unset($request['_token']);
