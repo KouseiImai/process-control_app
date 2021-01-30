@@ -17,12 +17,14 @@ class CreateDailyReportsTable extends Migration
             $table->increments('id');
             $table->integer('production_num');
             $table->date('done_date');
+            $table->integer('start_hour');
+            $table->integer('start_minutes');
             $table->integer('done_hour');
             $table->integer('done_minutes');
             $table->integer('accident_hour')->nullable();
             $table->integer('accident_minutes')->nullable();
-            $table->integer('pre_process_hour')->nullable();
-            $table->integer('pre_process_minutes')->nullable();
+            $table->integer('wait_hour')->nullable();
+            $table->integer('wait_minutes')->nullable();
             $table->text('report_remarks')->nullable();
             $table->timestamps();
         });
