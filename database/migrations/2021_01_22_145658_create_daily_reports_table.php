@@ -17,6 +17,7 @@ class CreateDailyReportsTable extends Migration
             $table->increments('id');
             $table->integer('production_num');
             $table->date('done_date');
+            $table->date('start_date');
             $table->integer('start_hour');
             $table->integer('start_minutes');
             $table->integer('done_hour');
