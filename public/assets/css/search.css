@@ -1,0 +1,29 @@
+.date_contents {
+  display: flex;
+  height: 40px;
+  margin-bottom: 60px;
+}
+
+.tilde {
+  margin: 0 20px;
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.result_main {
+  display: flex;
+  justify-content: center;
+}
+
+.search_page_th {
+  border-right: solid 1px black;
+  text-align: center;
+  width: auto;
+  padding: 2px 10px;
+  background-color: #90ee90;
+  color: white;
+}
+
+.search_page_td {
+  padding: 2px 10px;
+}

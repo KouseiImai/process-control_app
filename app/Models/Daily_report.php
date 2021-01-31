@@ -32,4 +32,14 @@ class Daily_report extends Model
             'production_item_id'
         );
     }
+
+    public function scopeDateStart($query, $n)
+    {
+        return $query->where('done_date', '>=', $n);
+    }
+
+    public function scopeDateEnd($query, $n)
+    {
+        return $query->where('done_date', '<=', $n);
+    }
 }
