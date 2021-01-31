@@ -36,7 +36,7 @@
           <div class="input_num_form">
             <input type="text" name="production_num" class="num_form"><div class="num_text">枚</div>
           </div>
-          <label class="label_name">生産完了時間 <div class="required_item">必須項目</div></label>
+          <label class="label_name">生産完了時間<div class="required_item">必須項目</div>(※生産が終わった時刻を入力して下さい)</label>
           <div class="time_form">
             <select class="hour_select_form" name="done_hour">
               <option value="">--</option>
@@ -52,15 +52,15 @@
             </select>
             <div class="minutes_text">分</div>
           </div>
-          <label class="label_name">故障時間</label>
+          <label class="label_name">故障時間 (※トータルの時間を入力して下さい)</label>
           <div class="time_form">
             <select class="hour_select_form" name="accident_hour">
               <option value="">--</option>
-              @foreach(range(0,23) as $h)
+              @foreach(range(0,99) as $h)
                 <option value="{{ $h }}">{{ $h }}</option>
               @endforeach
             </select>
-            <div class="hour_text">時</div>
+            <div class="hour_text">時間</div>
             <select class="minutes_select_form" name="accident_minutes">
               <option value="">--</option>
               <option value="0">0</option>
@@ -68,16 +68,16 @@
             </select>
             <div class="minutes_text">分</div>
           </div>
-          <label class="label_name">前工程待ち時間</label>
+          <label class="label_name">待ち時間 (※トータルの時間を入力して下さい)</label>
           <div class="time_form">
-            <select class="hour_select_form" name="pre_process_hour">
+            <select class="hour_select_form" name="wait_hour">
               <option value="">--</option>
-              @foreach(range(0,23) as $h)
+              @foreach(range(0,99) as $h)
                 <option value="{{ $h }}">{{ $h }}</option>
               @endforeach
             </select>
-            <div class="hour_text">時</div>
-            <select class="minutes_select_form" name="pre_process_minutes">
+            <div class="hour_text">時間</div>
+            <select class="minutes_select_form" name="wait_minutes">
               <option value="">--</option>
               <option value="0">0</option>
               <option value="30">30</option>
