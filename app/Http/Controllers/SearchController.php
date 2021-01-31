@@ -33,7 +33,35 @@ class SearchController extends Controller
         {
             $datum = Daily_report::all();
         }
-        
+        foreach( $datum as $data )
+        {
+            $start_date = date('Ymd',strtotime($data->start_date));
+            $done_date = date('Ymd',strtotime($data->done_date));
+            $difference_date = (int)$done_date - (int)$start_date;
+            if( $difference_date == 0 )
+            {
+                $total_hour = ($data->done_hour) - ($data->start_hour);
+                if( $data->start_minutes == 30 && $data->done_minutes == 30 )
+                {
+                    $total_minutes = 0;
+                }else
+                {
+                    $total_minutes = ($data->done_minutes) + ($data->start_minutes);
+                }
+            }else
+            {
+                $total_hour = ($difference_date * 24) - ($data->start_hour) + ($data->done_hour);
+                if( $data->start_minutes == 30 && $data->done_minutes == 30 )
+                {
+                    $total_minutes = 0;
+                }else
+                {
+                    $total_minutes = ($data->start_minutes) + ($data->done_minutes);
+                }
+            }
+            $data['total_hour'] = $total_hour;
+            $data['total_minutes'] = $total_minutes;
+        }
         return view('search.result',compact('datum'));
     }
 }
