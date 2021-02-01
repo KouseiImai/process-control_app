@@ -34,7 +34,7 @@ tr {
   border: solid 1px black;
   text-align: center;
   position: sticky;
-  left: 67px;
+  left: 57px;
   color: white;
   background: #bcddff;
 }
@@ -44,7 +44,7 @@ tr {
   border: solid 1px black;
   text-align: center;
   position: sticky;
-  left: 166px;
+  left: 156px;
   color: white;
   background: #bcddff;
 }
@@ -81,14 +81,14 @@ td {
 
 .item_td {
   position: sticky;
-  left: 67px;
+  left: 57px;
   color: #404040;
   background: white;
 }
 
 .lotnumber_td {
   position: sticky;
-  left: 166px;
+  left: 156px;
   color: #404040;
   background: white;
 }
