@@ -20,39 +20,40 @@
 # ＜ デプロイ先・テストアカウント ＞
 
 <デプロイ先><br>
-Heroku : ※実装中の為、後程記入します。<br>
+Heroku : https://process-control-app.herokuapp.com/<br>
+(※ 途中段階です。)
 
 # ＜ 利用方法 ＞
 
-※実装中の為、以下の画面はイメージです!!
+※実装中の為、以下の画面はイメージです!!<br>
 ※変更となる可能性があります。
 
-- Homeページ
+- Homeページ<br>
 Homeページにて「工程登録」「進捗確認」「日報入力」「データ検索」「設定」を選択し各専用のページへ遷移します。
-<img width="821" alt="スクリーンショット 2021-01-10 19 10 13" src="https://user-images.githubusercontent.com/69197315/104120095-80ad8080-5377-11eb-9647-be976281e6c4.png">
+<img width="1415" alt="スクリーンショット 2021-02-01 17 22 45" src="https://user-images.githubusercontent.com/69197315/106432477-1f7a5800-64b2-11eb-8785-57f0fc653110.png">
 
-- 工程登録
+- 工程登録<br>
 アイテムやLot_Noごとに工程を登録出来ます。
-<img width="821" alt="スクリーンショット 2021-01-10 1 43 46" src="https://user-images.githubusercontent.com/69197315/104103446-7d69b480-52e5-11eb-9a5c-99423dfca792.png">
+<img width="637" alt="スクリーンショット 2021-02-01 16 14 20" src="https://user-images.githubusercontent.com/69197315/106432656-5c464f00-64b2-11eb-9537-2996e7b2f1cd.png">
 
-- 進捗確認
+- 進捗確認<br>
 現在の日付に対しての進捗を一覧表で確認出来ます。
-<img width="819" alt="スクリーンショット 2021-01-09 13 31 08" src="https://user-images.githubusercontent.com/69197315/104103461-93777500-52e5-11eb-9f81-a2a281f85ca2.png">
+<img width="1433" alt="スクリーンショット 2021-02-01 16 13 33" src="https://user-images.githubusercontent.com/69197315/106432559-3caf2680-64b2-11eb-9e16-f75dddbc5da8.png">
 
-- 日報入力
-本日の日報を入力するページで、「アイテム名」「Lot_No」「生産数」「着手時間」を入力します。
-<img width="826" alt="スクリーンショット 2021-01-10 13 43 20" src="https://user-images.githubusercontent.com/69197315/104114643-17634880-534a-11eb-9109-18d6c60c40e6.png">
+- 日報入力<br>
+本日の日報を入力するページで、「アイテム名」「Lot_No」「生産数」「着手時間」を入力します。<br>
+<日報入力画面>
+<img width="635" alt="スクリーンショット 2021-02-01 16 14 51" src="https://user-images.githubusercontent.com/69197315/106432712-71bb7900-64b2-11eb-9040-ed23b4694a41.png">
 
-- データ検索
+<入力完了画面>
+<img width="634" alt="スクリーンショット 2021-02-01 16 19 24" src="https://user-images.githubusercontent.com/69197315/106432933-c8c14e00-64b2-11eb-82dc-b43477909203.png">
+
+- データ検索<br>
 過去の生産状況を検索出来ます。<br>
 <検索フォーム>
-<img width="830" alt="スクリーンショット 2021-01-09 15 00 17" src="https://user-images.githubusercontent.com/69197315/104096061-9f5f3900-52dd-11eb-8427-64d3969ee42e.png">
+<img width="633" alt="スクリーンショット 2021-02-01 16 15 17" src="https://user-images.githubusercontent.com/69197315/106432779-8ac42a00-64b2-11eb-9969-bd44d923a87f.png">
 ＜検索結果画面＞
-<img width="822" alt="スクリーンショット 2021-01-09 14 43 39" src="https://user-images.githubusercontent.com/69197315/104103398-3da2cd00-52e5-11eb-9eec-02c840307439.png">
-
-- 設定
-進捗確認表にて表示する範囲色の変更が出来ます。
-<img width="822" alt="スクリーンショット 2021-01-09 20 14 25" src="https://user-images.githubusercontent.com/69197315/104096156-1f859e80-52de-11eb-865b-1724b36e6ffd.png">
+<img width="804" alt="スクリーンショット 2021-02-01 16 26 51" src="https://user-images.githubusercontent.com/69197315/106432830-9c0d3680-64b2-11eb-9f12-3229fbb727df.png">
 
 
 # ＜ 工夫したポイント ＞
