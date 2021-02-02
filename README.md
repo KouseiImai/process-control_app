@@ -33,7 +33,8 @@ Homeページにて「工程登録」「進捗確認」「日報入力」「デ�
 <img width="1415" alt="スクリーンショット 2021-02-01 17 22 45" src="https://user-images.githubusercontent.com/69197315/106432477-1f7a5800-64b2-11eb-8785-57f0fc653110.png">
 
 - 工程登録<br>
-アイテムやLot_Noごとに工程を登録出来ます。
+工程の登録が出来ます。
+<img width="1432" alt="スクリーンショット 2021-02-01 16 13 12" src="https://user-images.githubusercontent.com/69197315/106533886-45494080-6536-11eb-80df-f7f94a5d3962.png">
 <img width="637" alt="スクリーンショット 2021-02-01 16 14 20" src="https://user-images.githubusercontent.com/69197315/106432656-5c464f00-64b2-11eb-9537-2996e7b2f1cd.png">
 
 - 進捗確認<br>
@@ -42,15 +43,14 @@ Homeページにて「工程登録」「進捗確認」「日報入力」「デ�
 
 - 日報入力<br>
 本日の日報を入力するページで、「アイテム名」「Lot_No」「生産数」「着手時間」を入力します。<br>
-<日報入力画面>
+＜日報入力画面＞
 <img width="635" alt="スクリーンショット 2021-02-01 16 14 51" src="https://user-images.githubusercontent.com/69197315/106432712-71bb7900-64b2-11eb-9040-ed23b4694a41.png">
-
-<入力完了画面>
+＜入力完了画面＞
 <img width="634" alt="スクリーンショット 2021-02-01 16 19 24" src="https://user-images.githubusercontent.com/69197315/106432933-c8c14e00-64b2-11eb-82dc-b43477909203.png">
 
 - データ検索<br>
 過去の生産状況を検索出来ます。<br>
-<検索フォーム>
+＜検索フォーム＞
 <img width="633" alt="スクリーンショット 2021-02-01 16 15 17" src="https://user-images.githubusercontent.com/69197315/106432779-8ac42a00-64b2-11eb-9969-bd44d923a87f.png">
 ＜検索結果画面＞
 <img width="804" alt="スクリーンショット 2021-02-01 16 26 51" src="https://user-images.githubusercontent.com/69197315/106432830-9c0d3680-64b2-11eb-9f12-3229fbb727df.png">
