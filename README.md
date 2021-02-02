@@ -34,11 +34,11 @@ Homeページにて「工程登録」「進捗確認」「日報入力」「デ�
 
 - 工程登録<br>
 工程の登録が出来ます。
-<img width="1432" alt="スクリーンショット 2021-02-01 16 13 12" src="https://user-images.githubusercontent.com/69197315/106533886-45494080-6536-11eb-80df-f7f94a5d3962.png">
 <img width="637" alt="スクリーンショット 2021-02-01 16 14 20" src="https://user-images.githubusercontent.com/69197315/106432656-5c464f00-64b2-11eb-9537-2996e7b2f1cd.png">
 
 - 進捗確認<br>
 現在の日付に対しての進捗を一覧表で確認出来ます。
+<img width="1432" alt="スクリーンショット 2021-02-01 16 13 12" src="https://user-images.githubusercontent.com/69197315/106533886-45494080-6536-11eb-80df-f7f94a5d3962.png">
 <img width="1433" alt="スクリーンショット 2021-02-01 16 13 33" src="https://user-images.githubusercontent.com/69197315/106432559-3caf2680-64b2-11eb-9e16-f75dddbc5da8.png">
 
 - 日報入力<br>
