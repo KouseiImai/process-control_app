@@ -12,19 +12,7 @@
       </tr>
       @foreach ( $datum as $data )
         <tr>
-          @if ( $data->start_date == $data->end_date )
-            @if ( $data->start_hour == $data->end_hour )
-              <td rowspan="2" class="progress_td underline">--</td>
-            @else
-              <td rowspan="2" class="progress_td underline">{{ floor((($now_time - $data->start_hour) / ( $data->end_hour - $data->start_hour )) * 100) }}%</td>
-            @endif
-          @else
-            @if ( $data->start_hour == $data->end_hour )
-              <td rowspan="2" class="progress_td underline">--</td>
-            @else
-              <td rowspan="2" class="progress_td underline">{{ floor((($now_time - $data->start_hour) / ( 24 - $data->start_hour + $data->end_hour )) * 100) }}%</td>
-            @endif
-          @endif
+          <td rowspan="2" class="progress_td underline">{{ $data->progress_rate }}%</td>
           @foreach ( $data->production_items as $item )
             <td rowspan="2" class="item_td underline">{{ $item->item_name }}</td>
           @endforeach
