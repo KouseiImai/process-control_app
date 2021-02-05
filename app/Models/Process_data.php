@@ -32,4 +32,14 @@ class Process_data extends Model
             'production_item_id'
         );
     }
+
+    public function scopeStartDate($query, $n)
+    {
+        return $query->where('start_date', '<=', $n);
+    }
+
+    public function scopeEndDate($query, $n)
+    {
+        return $query->where('end_date', '>=', $n);
+    }
 }
