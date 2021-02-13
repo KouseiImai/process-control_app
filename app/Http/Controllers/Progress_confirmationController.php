@@ -59,6 +59,9 @@ class Progress_confirmationController extends Controller
                 }
             }
             $data['progress_rate'] = $progress_rate;
+            $data['start_day'] = $start_day;
+            $data['end_day'] = $end_day;
+            $data['to_day'] = $to_day;
         }
         return view('progress_confirmation.index', compact('datum','now_time'));
     }
