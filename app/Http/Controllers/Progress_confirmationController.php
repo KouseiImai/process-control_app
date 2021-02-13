@@ -18,6 +18,11 @@ class Progress_confirmationController extends Controller
         $datum = Process_data::StartDate($to_day)->EndDate($to_day)->get();
         foreach( $datum as $data )
         {
+            $start_month = date('m',strtotime($data->start_date));
+            $start_day = date('d', strtotime($data->start_date));
+            $end_month = date('m',strtotime($data->end_date));
+            $end_day = date('d',strtotime($data->end_date));
+            $to_day = date('d');
             if( $data->start_date == $data->end_date )
             {
                 if( $data->start_hour <= $now_time )
@@ -31,11 +36,6 @@ class Progress_confirmationController extends Controller
             {
                 if( $data->start_hour <= $now_time )
                 {
-                    $start_month = date('m',strtotime($data->start_date));
-                    $start_day = date('d', strtotime($data->start_date));
-                    $end_month = date('m',strtotime($data->end_date));
-                    $end_day = date('d',strtotime($data->end_date));
-                    $to_day = date('d');
                     if( $start_month == $end_month)
                     {
                         $difference_date = (int)$end_day - (int)$start_day;
